@@ -2,7 +2,6 @@ let scene = new THREE.Scene();
 let camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 4000);
 let renderer
 let light   
-let spheres = []
 let raycaster
 let mouse = new THREE.Vector2(), INTERSECTED;
 let windowHalfX = window.innerWidth / 2;
@@ -13,7 +12,8 @@ var radius = 100, theta = 0;
 function init() {
     
     camera.position.set( 0, 0, 2200 );
-    camera.lookAt(scene.position);
+    // camera.lookAt(scene.position);
+    camera.lookAt(0, -90, 0)
 
     //environment reflection
     var path = 'texture/CoitTower2/';
@@ -82,7 +82,7 @@ function init() {
     // small squares behind name
      let geometry3 = new THREE.BoxBufferGeometry( 25, 30, 40 );
 
-    for ( let i = 0; i < 300; i ++ ) {
+    for ( let i = 0; i < 200; i ++ ) {
         let object
         if (i % 6 == 0){
             object = new THREE.Mesh( geometry3, new THREE.MeshLambertMaterial( { color: Math.random() * 0xffffff  , envMap: refractionCube, refractionRatio: 0.7 } ) );
@@ -110,7 +110,7 @@ function init() {
 
     }
 
-    // small objects in front of name
+    // small objects at the back
 
     let farObjGeometry = new THREE.BoxBufferGeometry( 25, 30, 40 );
     let farObj
@@ -133,21 +133,22 @@ function init() {
         }
 
     // light
-    light = new THREE.PointLight(0xff00ff);
-    light.position.set(0, 0, 15);
+    // light = new THREE.PointLight(0xff00ff);
+    // light.position.set(0, 0, 15);
 
     const ambient1 = new THREE.AmbientLight( 0xffffff );
 				scene.add( ambient1 );
 
-    pointLight = new THREE.PointLight( 0xffffff, 1.2 );
+    pointLight = new THREE.PointLight( 0xffffff, 1 );
+    pointLight.position.set(0,0,15)
     scene.add( pointLight );
    
 
    let matFloor = new THREE.MeshBasicMaterial({color: 'black'});
-   var geoFloor = new THREE.PlaneBufferGeometry( 580, 140 );
+   var geoFloor = new THREE.PlaneBufferGeometry( 600, 300 );
    var mshFloor = new THREE.Mesh( geoFloor, matFloor );
    mshFloor.receiveShadow = true;
-   mshFloor.position.set( 0, - 0.05, 0 );
+   mshFloor.position.set( 0, - 40, 0 );
    scene.add( mshFloor );
 
 

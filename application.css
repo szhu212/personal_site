@@ -1,13 +1,99 @@
+a { 
+    color: inherit; 
+    text-decoration: none;
+} 
+
 .instruction {
     /* background-color: black; */
     text-align: center;
     color: white;
     position: absolute;
-    top: 10px;
+    top: 10vh;
 	width: 100%;
 	z-index: 100;
     display: block;
     font-size: 18px;
     line-height: 20px;
+      /* -webkit-text-stroke: 1px black; */
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
+
+.scroll-holder {
+    color: white;
+    position: absolute;
+    top: 85vh;
+    width: 100%;
+    text-align: center;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.nav {
+    position: absolute;
+    display: flex;
+    list-style-type: none;
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    top: 2vh;
+    right: 5vh;
+}
+
+.nav li {
+    margin-left: 30px;
+}
+
+/* .threejs-screen{
+    position: absolute;
+} */
+
+/* ul {
+    margin: 0;
+} */
+
+.nav li::before {
+    content: '';
+    background: #efefef;
+    position: absolute;
+    bottom: 0;
+    /* left: 10px; */
+    width: 70px;
+    height: 2px;
+    visibility: hidden;
+    /* transition: all 0.4s cubic-bezier(0.5475, 0.0085, 0.7678, 0.9508); */
+    -webkit-transition: all .5s cubic-bezier(1,.25,0,.75) 0s;
+    transition: all .5s cubic-bezier(1,.25,0,.75) 0s;
+    transform: scaleX(0);
+}
+
+.nav li:hover::before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+.nav li:hover {
+    cursor:pointer;
+    /* color:#efefef; */
+    /* text-decoration:none; */
+}
+
+/* .nav li:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #f00;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all .5s cubic-bezier(1,.25,0,.75) 0s;
+    transition: all .5s cubic-bezier(1,.25,0,.75) 0s;
+}
+
+.nav li:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+} */

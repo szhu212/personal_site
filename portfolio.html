@@ -8,9 +8,10 @@
     <script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Raleway">
-    <link rel="stylesheet" href="application.css">
+    <link rel="stylesheet" href="/assets/stylesheets/main.css">
+    <link rel="stylesheet" href="/assets/stylesheets/projects.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
-    
+    <script type="text/javascript" src="./bundle.js" charset="utf-8" defer></script>
     <title>Skylar Zhu</title>
     <style>
         body { 
@@ -24,7 +25,7 @@
     <script src="./threejs.js"></script>
     <div class="threejs-screen">
         <ul class="nav">
-            <li>About Me</li>
+            <li><a href="#about-me">About Me</a></li>
             <li><a href="#projects">Projects</a></li>
             <li>Contact</li>
 
@@ -33,18 +34,89 @@
             <p>Click and drag to see from another angle</p>
             <p>Hover to have more light effect</p>
         </div>
+        <div class="socials">
+            <div class="github">
+                <a href="https://github.com/szhu212">
+                  <i class="fab fa-github fa-3x"></i>
+              </a>
+            </div>
+             <div class="linkedin">
+                <a href="https://www.linkedin.com/in/skylar-wenyu-zhu-98aa00108/">
+                  <i class="fab fa-linkedin fa-3x"></i>
+                </a>
+            </div>
+            <div class="resume">
+                <i class="fas fa-portrait fa-3x"></i>
+                <!-- <i class="far fa-id-card fa-3x"></i> -->
+            </div>
+        </div>
         <div class="scroll-holder">
             <p>Scroll</p>
-            <i class="fas fa-chevron-down fa-2x"></i>
+            <div class="scroll-icon">
+                <i class="fas fa-chevron-down fa-2x"></i>
+            </div>
         </div>
     </div>
     <div class="main-page">
         <div class="projects">
-            <h2 id="projects">Projects</h2>
-            <div class="fs-project">
+            <div class="project-field">
+              <h2 >Projects</h2>
+                <div id="fs-project">
+                    <ul class="fs-bullet-points" id="fs-bullet-points">
+                        Ruby on Rails <br>
+                        ReactJS <br>
+                        Redux <br>
+                        AWS S3
+                    </ul>
+                    <div id="fs-img" class="fs-img">
+                        <div class="text-container">
+                            <h3>100 Illusts</h3>
+                            <p> An interactive illustration gallery application where users that allows users to publicly share original illustrations that can be viewed and liked by other users.</p>
+                            <div class="links">
+                                <a href="https://github.com/szhu212/100Illusts">Github</a>
+                                <a href="https://one-hundred-illusts.herokuapp.com/">Live</a>
+                            </div> 
+                        </div>
+                        <div class="underscore"></div>
+                        <!-- <img src="assets/images/fs.png"/> -->
+                    </div>
                 
                 </div>
+                <div id="mern-project">
+                    <div class="mern-img" id="mern-img">
+                        <div class="text-container">
+                            <h3>Theme Chat Room</h3>
+                            <p> A role play game based on live chat. Players can choose a theme and get ramdomly assigned namecards and chat in the role of the favorite chatacters.</p>
+                            <div class="links">
+                                <a href="https://github.com/uranussg/mern-project/">Github</a>
+                                <a href="https://thegameroom100.herokuapp.com">Live</a>
+                            </div> 
+                        </div>
+                        <div class="underscore"></div>
+                    </div>
+                    <!-- <img src="assets/images/fs.png"/> -->
+                </div>
+                <div id="js-project">
+                    <div class="js-img" id="js-img">
+                        <div class="text-container">
+                            <h3>Bounce Cube</h3>
+                            <p> A survival game implemented with HTML Canvas and Javascript. The player can navagate his/her cube to go pass walls and bombs to hit all targets to clear each levels.</p>
+                            <div class="links">
+                                <a href="https://github.com/szhu212/BounceCube">Github</a>
+                                <a href="https://bounce-cube.web.app/">Live</a>
+                            </div> 
+                        </div>
+                        <div class="underscore"></div>
+                    </div>
+                    <!-- <img src="assets/images/fs.png"/> -->
+                </div>
+
+                
             </div>
+        </div>
+        <div class="about-me">
+            <h2 id="about-me">About Me</h2>
+           
         </div>
 
     </div>

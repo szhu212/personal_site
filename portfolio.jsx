@@ -39,11 +39,12 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
 
-    const fsBulletPoints = document.getElementById('fs-bullet-points')
-    const newInnerHTML = fsBulletPoints.innerHTML.split("<br>")
-    .map((text, i) => '<li style="animation-delay:' + (400 * i) + 'ms">' + text + '</li>')
-    .join(''); 
-    fsBulletPoints.innerHTML = newInnerHTML
-
+    const bulletPoints = [document.getElementById('fs-bullet-points'), document.getElementById('mern-bullet-points'), document.getElementById('js-bullet-points')]
+      for (let j = 0; j < bulletPoints.length; j++) {
+        let projectInnerHTML = bulletPoints[j].innerHTML.split("<br>")
+          .map((text,i) => '<li style="animation-delay:' + (400 * (i+1)) + 'ms">' + text + '</li>')
+          .join('')
+          bulletPoints[j].innerHTML = projectInnerHTML
+      }
 
 })

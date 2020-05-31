@@ -4,7 +4,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    padding: 0px 15px 0px 0px;
+    padding: 0px 16px 0px 0px;
     width: 100%;
     /* display: grid;
     grid-template-columns: 12.5% 25% 25% 25% 12.5%; */
@@ -75,7 +75,7 @@
 
 #fs-project .underscore, #js-project .underscore{
     margin-top: -55%;
-    width: 110%;
+    width: 100%;
     height: 4px;
     border-bottom: 4px solid white;
     transform: translateX(-100%);
@@ -84,7 +84,7 @@
 
 #mern-project .underscore {
     margin-top: -55%;
-    width: 110%;
+    width: 100%;
     height: 4px;
     border-bottom: 4px solid white;
     transform: translateX(200%);
@@ -107,20 +107,55 @@
     transition: all 0.5s ease-in-out;
 }
 
-.fs-bullet-points {
+.fs-bullet-points, .js-bullet-points {
     position: absolute; 
     left: 65vw;
     margin-top: 10%;
     font-size: 24px;
+    z-index: 11;
 }
 
-.fs-bullet-points li {
+/* test */
+/* .js-bullet-points li, .mern-bullet-points li {
+    position: absolute; 
+} */
+
+.mern-bullet-points {
+    position: absolute; 
+    left: -200px;
+    margin-top: 10%;
+    font-size: 24px;
+    z-index: 11;
+}
+
+.fs-bullet-points li, 
+.mern-bullet-points li,
+.js-bullet-points li{
     margin-bottom: 5px;
     opacity: 0;
 }
 
-#fs-project:hover .fs-bullet-points li {
-    animation: fade-in 1s forwards;
+#fs-project:hover .fs-bullet-points li,
+#mern-project:hover .mern-bullet-points li,
+#js-project:hover .js-bullet-points li {
+    animation: fade-in 2s forwards;
+}
+
+@media all and (max-width: 1100px) {
+    .fs-bullet-points, .js-bullet-points{     
+        left: 750px;
+    }
+
+    .mern-bullet-points {
+        left: -170px;
+    }
+}
+
+@media all and (max-width: 770px) {
+
+    .mern-bullet-points {
+        display: none;
+    }
 }
 
 @keyframes fade-in {
@@ -174,7 +209,10 @@
     background-size: cover;
     position: relative;
     transform: translateX(1000px);
+    overflow: hidden;
 }
+
+
 
 
 #mern-project {
@@ -186,7 +224,7 @@
     max-width: 800px;
     max-height: 560px;
     color: white;
-    overflow: hidden;
+    /* overflow: hidden; */
     border-radius: 5px;
     margin-left: auto;
     box-sizing: border-box;
@@ -205,6 +243,7 @@
     background-size: cover;
     position: relative;
     transform: translateX(-100%);
+    overflow: hidden;
 }
 
 #js-project {
@@ -216,28 +255,17 @@
     max-width: 800px;
     max-height: 560px;
     color: white;
-    overflow: hidden;
+    /* overflow: hidden; */
     border-radius: 5px;
     box-sizing: border-box;
     position: relative;
     margin-bottom: 40px;
 }
 
-@media all and (max-width: 1100px) {
-    .fs-bullet-points{     
-        left: 750px;
-    }
-}
 
 .appear {
    transform: translateX(0);
    transition: all 0.5s ease-in-out;
 }
 
-.about-me {
-    background-color: rgb(63, 92, 83);
-    border: 60px solid rgb(21,37,34);
-    box-sizing: border-box;
-    width: 100%;
-}
 

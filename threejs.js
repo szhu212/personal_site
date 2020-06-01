@@ -6,14 +6,31 @@ let raycaster
 let mouse = new THREE.Vector2(), INTERSECTED;
 let windowHalfX = window.innerWidth / 2;
 let windowHalfY = window.innerHeight / 2;
-var radius = 100, theta = 0;
-
+let loadingCompleted = false
 
 function init() {
     
     camera.position.set( 0, 0, 2200 );
     // camera.lookAt(scene.position);
     camera.lookAt(0, -90, 0)
+
+    // loading page
+    // const loadingManager = new THREE.LoadingManager( () => {
+	
+	// 	const loadingScreen = document.getElementById( 'loading-screen' );
+    //     loadingScreen.classList.add( 'fade-out' );
+    // })
+    const loadingManager = new THREE.LoadingManager()
+    const loadingScreen = document.getElementById( 'loading-screen' );
+    loadingManager.onProgress = function(item, loaded, total){
+		console.log(item, loaded, total);
+	};
+    loadingManager.onLoad = function (){
+        console.log('loaded')
+        loadingCompleted = true
+        loadingScreen.classList.add( 'fade-out' );
+        loadingScreen.style.zIndex = "-1"
+    }
 
     //environment reflection
     var path = 'texture/CoitTower2/';
@@ -23,21 +40,16 @@ function init() {
         path + 'py' + format, path + 'ny' + format,
         path + 'pz' + format, path + 'nz' + format
     ];
-    // var path2 = 'texture/snow/';
-    // var format = '.jpg';
-    // var snowUrls = [
-    // path2 + 'px' + format, path2 + 'nx' + format,
-    // path2 + 'py' + format, path2 + 'ny' + format,
-    // path2 + 'pz' + format, path2 + 'nz' + format
-    // ];
+  
     let reflectionCube = new THREE.CubeTextureLoader().load( urls );
-    let refractionCube = new THREE.CubeTextureLoader().load( urls )
+    let refractionCube = new THREE.CubeTextureLoader(loadingManager).load( urls )
     // var bg = new THREE.CubeTextureLoader().load( snowUrls );
     refractionCube.mapping = THREE.CubeRefractionMapping;
 
     const fontLoader = new THREE.FontLoader();
+    // fontLoader.load('https://threejs.org//examples/fonts/droid_serif_regular.typeface.json', function(font) {
     fontLoader.load('https://threejs.org//examples/fonts/gentilis_regular.typeface.json', function(font) {
-       
+
         // refractionCube.mapping = THREE.CubeRefractionMapping;
         // var material = new THREE.MeshLambertMaterial( { color: 0xffffff ,  refractionRatio: 0.8} )
         // var material = new THREE.MeshLambertMaterial( { color: 0xffffff, envMap: reflectionCube, reflectivity: 0.3 } );
@@ -50,8 +62,11 @@ function init() {
             curveSegments: 12,
             bevelEnabled: true,
             material: 0,
-            extrudeMaterial: 1,
-            //  bevelThickness: 5
+            bevelOffset: 0,
+            bevelSize: 5,
+            // extrudeMaterial: 1,
+            bevelSegments: 8,
+             bevelThickness: 10,
         });
         textGeo.center();
         textGeo.computeBoundingBox();
@@ -62,8 +77,11 @@ function init() {
             curveSegments: 12,
             bevelEnabled: true,
             material: 0,
-            extrudeMaterial: 1,
-            // bevelThickness: 1
+            bevelOffset: 0,
+            bevelSize: 4,
+            // extrudeMaterial: 1,
+            bevelSegments: 8,
+            bevelThickness: 10,
         });
         textTitle.center();
         // textTitle.position.y += 100
@@ -187,7 +205,7 @@ function onDocumentMouseMove( event ) {
 
 
 function render() {
-    if (camera.position.z > 500){
+    if (camera.position.z > 500 && loadingCompleted){
         camera.position.z -= 25;
     }
 

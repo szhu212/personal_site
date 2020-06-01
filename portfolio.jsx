@@ -1,15 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-// debugger
     window.addEventListener('scroll', (e) => {
-        // debugger
         const y = window.scrollY
-        const wh = window.innerHeight  //1450 1050
+        const wh = window.innerHeight  
         const ww = window.innerWidth
-        // debugger
+        
+
+
+
+// projects appear
         let fsImg = document.getElementById("fs-img");
-        if (y >= 330 ) {
-          // debugger
+        if (y >= 330 + wh ) {
             fsImg.classList.add("appear") 
           } else {
             fsImg.classList.remove("appear")
@@ -22,23 +23,21 @@ document.addEventListener('DOMContentLoaded', () => {
               } else if (ww >= 1450) {
                 windowAdj = 225
               }
-          if (y >= 760 + windowAdj ) {
-            // if(y>=700){
+          if (y  >= 760 + windowAdj + wh) {
             mernImg.classList.add("appear") 
           } else {
             mernImg.classList.remove("appear")
           }  
 
           let jsImg = document.getElementById("js-img");
-          if (y >= 1260 + windowAdj ) {
-            // if(y>=700){
+          if (y >= 1260 + windowAdj + wh) {
              jsImg .classList.add("appear") 
           } else {
              jsImg .classList.remove("appear")
           }  
     })
 
-
+// project bullet points appear
     const bulletPoints = [document.getElementById('fs-bullet-points'), document.getElementById('mern-bullet-points'), document.getElementById('js-bullet-points')]
       for (let j = 0; j < bulletPoints.length; j++) {
         let projectInnerHTML = bulletPoints[j].innerHTML.split("<br>")

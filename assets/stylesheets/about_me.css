@@ -1,3 +1,27 @@
+/* .about-me {
+    height: 100vh;
+    background-image: url("assets/images/2color-bg2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 0px 15px 0px 0px;
+    width: 100%
+} */
+
+.about-me h2 {
+    color: white;
+    height: 120px;
+    margin: 0;
+    /* top: 10px;
+    left: 10px; */
+    font-size: 50px;
+    padding: 30px;
+    box-sizing: border-box;
+    flex-grow: 0;
+}
+
+
+
 .about-me {
     color: white;
     height: 100vh;
@@ -14,12 +38,19 @@
 
 .about-me-field {
     width: 90%;
+    height: calc(100% - 120px);
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 9;
+ 
 }
 
 #self-intro {
     display: flex;
     justify-content: space-between;
+    flex-grow: 0;
+    opacity: 0;
 }
 
 .profile-pic img {
@@ -39,16 +70,74 @@
     min-width: 300px;
 }
 
+#skills-section {
+    width: 80%;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 9;
+    /* margin-left: 20%; */
+    margin-left: auto;
+    vertical-align: middle;
+    /* opacity: 0; */
+
+    /* align-items: right; */
+}
+
+/* #skills-section {
+    margin-top: 50%;
+    transform: translateX(-50%);
+} */
 .skill-list {
+    flex-grow: 9;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+   
+    /* height: 100%; */
 }
 
 .row {
    display: flex;
+   flex-grow: 1;
+   opacity: 0;
 }
 
 .row li {
     width: 25%;
+}
+
+.about-me-appear {
+    animation: fade-in 2s forwards;
+}
+
+@keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+@media all and (min-height: 800px) {
+    #skills-section h2{
+        margin-top: 10vh;
+    }
+
+}
+
+.contact-me {
+    padding: 10px 20px;
+    background-color: rgb(126, 215, 215);
+    border-radius: 5px;
+    width: 120px;
+    /* margin-left: 10%; */
+    /* margin: 0 auto; */
+}
+
+.contact-me:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: all 0.25s ease-in-out;
 }

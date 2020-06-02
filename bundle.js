@@ -100,7 +100,39 @@ document.addEventListener('DOMContentLoaded', () => {
         const wh = window.innerHeight  
         const ww = window.innerWidth
         
+// about-me appear
 
+const selfIntro = document.getElementById('self-intro')
+// for (let j = 0; j < 3; j++) {
+//   let selfIntroInnerHTML = selfIntro.innerHTML.split("<br>")
+//     .map((text,i) => '<p style="animation-delay:' + (500 * i) + 'ms">' + text + '</p>')
+//     .join('')
+//     selfIntro.innerHTML = selfIntroInnerHTML
+// }
+
+if (y >= 300 ) {
+  selfIntro.classList.add("about-me-appear") 
+} else {
+  selfIntro.classList.remove("about-me-appear")
+}   
+
+// skills appear 
+let rows = document.getElementsByClassName("row");
+// for (let j = 0; j < rows.length; j++) {
+//   rows[j].style.animationDelay = `${400 * j} ms`
+// }
+
+if(y >= 720) {
+  for (let j = 0; j < rows.length; j++) {
+    rows[j].classList.add('about-me-appear')
+  } 
+} else {
+  for (let j = 0; j < rows.length; j++) {
+    rows[j].classList.remove('about-me-appear')
+  } 
+}
+
+// console.log(rows)
 
 
 // projects appear

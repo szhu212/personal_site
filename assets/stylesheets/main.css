@@ -210,24 +210,7 @@ a {
     transform: scaleX(1);
 } */
 
-.about-me {
-    height: 100vh;
-    background-image: url("assets/images/2color-bg2.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    padding: 0px 15px 0px 0px;
-    width: 100%
-}
 
-.about-me h2 {
-    color: white;
-    margin: 0;
-    /* top: 10px;
-    left: 10px; */
-    font-size: 50px;
-    padding: 30px;
-}
 
 /* .about-me .background {
     position: absolute;

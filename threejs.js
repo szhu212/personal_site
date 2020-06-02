@@ -22,11 +22,11 @@ function init() {
     // })
     const loadingManager = new THREE.LoadingManager()
     const loadingScreen = document.getElementById( 'loading-screen' );
-    loadingManager.onProgress = function(item, loaded, total){
-		console.log(item, loaded, total);
-	};
+    // loadingManager.onProgress = function(item, loaded, total){
+	// 	console.log(item, loaded, total);
+	// };
     loadingManager.onLoad = function (){
-        console.log('loaded')
+        // console.log('loaded')
         loadingCompleted = true
         loadingScreen.classList.add( 'fade-out' );
         loadingScreen.style.zIndex = "-1"

@@ -1,13 +1,3 @@
-/* .about-me {
-    height: 100vh;
-    background-image: url("assets/images/2color-bg2.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    padding: 0px 15px 0px 0px;
-    width: 100%
-} */
-
 .about-me h2 {
     color: white;
     height: 120px;
@@ -34,6 +24,7 @@
     overflow: auto;
     background-attachment: fixed;
     padding: 0px 16px 0px 0px;
+    overflow: visible;
 }
 
 .about-me-field {
@@ -76,25 +67,16 @@
     display: flex;
     flex-direction: column;
     flex-grow: 9;
-    /* margin-left: 20%; */
     margin-left: auto;
     vertical-align: middle;
-    /* opacity: 0; */
-
-    /* align-items: right; */
 }
 
-/* #skills-section {
-    margin-top: 50%;
-    transform: translateX(-50%);
-} */
 .skill-list {
+    margin-top: -20px;
     flex-grow: 9;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-   
-    /* height: 100%; */
 }
 
 .row {
@@ -104,7 +86,7 @@
 }
 
 .row li {
-    width: 25%;
+    width: 20%;
 }
 
 .about-me-appear {
@@ -131,8 +113,6 @@
     background-color: rgb(126, 215, 215);
     border-radius: 5px;
     width: 120px;
-    /* margin-left: 10%; */
-    /* margin: 0 auto; */
 }
 
 .contact-me:hover, .resume-button:hover{

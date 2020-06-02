@@ -148,9 +148,14 @@
 }
 
 @media all and (max-width: 1100px) {
-    .fs-bullet-points, .js-bullet-points{     
+    .fs-bullet-points {     
         left: 750px;
     }
+
+    .js-bullet-points{     
+        left: 680px;
+    }
+
 
     .mern-bullet-points {
         left: -170px;

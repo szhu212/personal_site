@@ -33,7 +33,7 @@ function init() {
     }
 
     //environment reflection
-    var path = 'texture/CoitTower2/';
+    var path = 'assets/texture/CoitTower2/';
     var format = '.jpg';
     var urls = [
         path + 'px' + format, path + 'nx' + format,
@@ -43,7 +43,6 @@ function init() {
   
     let reflectionCube = new THREE.CubeTextureLoader().load( urls );
     let refractionCube = new THREE.CubeTextureLoader(loadingManager).load( urls )
-    // var bg = new THREE.CubeTextureLoader().load( snowUrls );
     refractionCube.mapping = THREE.CubeRefractionMapping;
 
     const fontLoader = new THREE.FontLoader();
